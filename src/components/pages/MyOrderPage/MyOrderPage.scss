@@ -1,0 +1,124 @@
+$margin: 0 0 5px;;
+
+ 
+.table-header{
+    position: sticky !important;
+    top: 0px ;
+    margin: 0 0 0 0;
+    z-index: 100;
+} 
+
+.heading-data{
+  color:darkslategray;
+  font-size: 14px;
+  margin-left: 20px;
+  
+}
+
+.span-data{
+  color:rgb(183, 16, 183);
+  font-size: 14px;
+}
+
+
+.address-data{
+    
+    width:300px;
+    font-size: 12px;
+    
+}
+
+.price{
+margin-left: 10px;
+}
+
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+
+
+
+
+
+
+  .accordion-section{
+    background: lightgray;
+  }
+
+
+  .shipping-address-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 20px;
+    margin: 0 0 20px;
+  }
+  
+  .address-details {
+    font-size: 16px;
+  }
+  
+  .name {
+    font-weight: bold;
+    margin: $margin;
+  }
+  
+  .address {
+    margin: $margin;
+  }
+  
+  .city-state-zip {
+    margin: $margin;
+  }
+  
+  .country {
+    margin: 0;
+  }
+
+
+  @mixin responsiveness{
+
+ .heading-col{
+    float:left;
+}
+.span-data{
+    float:left;
+}
+  }
+  
+
+
+@media screen and (min-width: 1400px){
+  @include responsiveness
+   
+    
+   
+  }
+  @media screen and (min-width: 1600px) {
+    
+  @include responsiveness
+  }
+  @media screen and (min-width: 1900px) {
+   
+    @include responsiveness
+  }
+
+  @media screen  and (min-width: 600px){
+    
+   @include responsiveness
+   
+    
+  }
+
+
+  @media screen and (min-width: 768px){
+   @include responsiveness
+  } 
+

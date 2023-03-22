@@ -1,0 +1,24 @@
+.dropdown-btn{
+    width:220px;
+    margin-right:90px;
+    
+}
+.filter-heading{
+    font-size: 14px;
+}
+
+.menu-item{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen  and (max-width:600px){
+    .dropdown-btn{
+        width:150px;
+        margin-right:90px;
+        
+    }
+    .filter-heading{
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,38 @@
+$background:rgb(174, 141, 31);
+$font-family:Arial, Helvetica, sans-serif;
+
+.color-nav{
+    background-color: $background;
+    position: sticky !important;
+    top:0;
+    z-index:100
+
+}
+.website-heading{
+    font-family: $font-family;
+}
+.text{
+    font-family: $font-family;
+    color:white;
+}
+
+.toggle-button{
+    margin-top: 6px;
+}
+
+@media screen  and (max-width: 600px){
+    .login-btn{
+        width:100px;
+        margin-left: 134px;
+    }
+
+    .logout-button{
+       width: 100px;
+       align-self: center;
+    }
+    // #responsive-navbar-nav{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+}

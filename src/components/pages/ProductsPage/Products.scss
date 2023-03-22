@@ -1,0 +1,43 @@
+.product-heading{
+    color:rgb(183, 0, 255)
+}
+.title{
+    font-size: 13px;
+}
+.product-title{
+    color: rgb(0, 42, 255);
+}
+
+.filter-list{
+    font-size: 10px;
+}
+
+.column-contents{
+    margin-bottom: 30px ;
+  
+  }
+
+  .filter-section {
+    margin-top: 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+// h5 .filter-heading{
+//     color: blueviolet;
+// }
+
+@media only screen and (max-width: 600px) {
+    .column-contents{
+      width:10px;
+    }
+    .filter-section {
+        margin-top: 100px;
+        margin-left: 15px;
+        margin-right: 15px;
+        justify-content: space-between;
+        align-items:center;
+      }
+  }

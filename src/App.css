@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  cursor: pointer;
+  
 }
 
 .App-logo {
@@ -13,8 +15,19 @@
   }
 }
 
+@media screen and(max-width:600px) {
+  .App{
+    width:100%;
+    
+  }
+  
+}
+.white-content {
+  background: #c1bdbd;
+}
+
 .App-header {
-  background-color: #282c34;
+  /* background-color: #767e8f; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
