@@ -20,7 +20,7 @@ const validationSchema = Yup.object().shape({
     .min(8, "Password must be at least 8 characters"),
 });
 
-const Loginpage = ({ setLogin }) => {
+const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
   // const dispatch = useDispatch();
 
   useEffect(() => {
@@ -160,7 +160,12 @@ const Loginpage = ({ setLogin }) => {
                       {errors.password && touched.password && errors.password}
                     </p>
                     {/* Click on submit button to submit the form */}
-                    <button type="submit" name="submit">
+                    <button
+                      type="submit"
+                      name="submit"
+                      data-testid="login-button"
+                      onClick={handleLogin}
+                    >
                       Login
                     </button>
                   </Form>

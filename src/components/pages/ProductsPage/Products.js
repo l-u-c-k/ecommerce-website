@@ -16,7 +16,7 @@ const ShowProducts = React.lazy(() => {
 function Products() {
   const dispatch = useDispatch();
   const { products, loading, cart } = useSelector((state) => state.productdata);
-  //    console.log("Product data:", products);
+  //console.log("Product data:", products);
   useEffect(() => {
     dispatch(loadProductsStart());
     dispatch(loadOrdersStart());

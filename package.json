@@ -47,6 +47,7 @@
     "react-toastify": "^9.1.1",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "redux-saga": "^1.2.1",
     "rsuite": "^5.25.0",
     "sass": "^1.57.1",
@@ -60,7 +61,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch account.json cart.json orders.json --port 5000",
-    "coverage":"yarn test --coverage --watchAll"
+    "coverage": "yarn test --coverage --watchAll",
+    "type": "module"
   },
   "eslintConfig": {
     "extends": [
@@ -81,6 +83,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
