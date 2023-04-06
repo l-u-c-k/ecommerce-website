@@ -10,15 +10,14 @@ import { loadOrdersStart } from "../../redux/actions/actions";
 import { ThemeContext, themes } from "../../toggle-context/ThemeContext";
 import Thememode from "./thememode";
 
-function NavbarComp({ isLogin, setLogin }) {
-  const { cart, cartTotalQuantity } = useSelector((state) => state.productdata);
+function NavbarComp({ isLogin, setLogin, cart, cartTotalQuantity }) {
+  // const { cart, cartTotalQuantity } = useSelector((state) => state.productdata);
   const [darkMode, setDarkMode] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
     localStorage.clear();
     setLogin(false);
-    // window.location.reload();
     navigate("/login");
   };
 
@@ -44,9 +43,6 @@ function NavbarComp({ isLogin, setLogin }) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              {/* <Nav.Link as={Link} to="/products">
-                <span className="text">Products</span>
-              </Nav.Link> */}
               {cart.length === 0 ? (
                 <Nav.Link
                   as={Link}
@@ -70,26 +66,17 @@ function NavbarComp({ isLogin, setLogin }) {
                 className="btn btn-light logout-button"
                 style={{ textDecoration: "none" }}
                 onClick={handleOrders}
+                data-testid="myOrdersButton"
               >
                 MyOrders
               </button>
               &nbsp;&nbsp;&nbsp;
-              {/* <Nav.Link
-                as={Link}
-                to="/login"
-                style={{ textDecoration: "none" }}
-              >
-                <span className="text">Login</span>
-              </Nav.Link> */}
-              {/* <Nav.Link as={Link} to="/cart">
-                <i className="fa fa-shopping-cart me-1"></i>
-                <span className="text">Cart({cartTotalQuantity})</span>
-              </Nav.Link> */}
               {!isLogin ? (
                 <button
                   className="btn btn-light logout-button"
                   onClick={handleLogin}
                   style={{ textDecoration: "none" }}
+                  data-testid="login-button"
                 >
                   Login
                 </button>
@@ -98,25 +85,11 @@ function NavbarComp({ isLogin, setLogin }) {
                   className="btn btn-light logout-button"
                   onClick={handleLogout}
                   style={{ textDecoration: "none" }}
+                  data-testid="logout-button"
                 >
                   Logout
                 </button>
               )}
-              {/* <button
-                className="btn btn-light logout-button"
-                onClick={handleLogin}
-                style={{ textDecoration: "none" }}
-              >
-                Login
-              </button>
-              &nbsp;&nbsp;&nbsp;
-              <button
-                className="btn btn-light logout-button"
-                onClick={handleLogout}
-                style={{ textDecoration: "none" }}
-              >
-                Logout
-              </button> */}
               &nbsp;&nbsp;
               <div className="toggle-button">
                 <ThemeContext.Consumer>

@@ -1,12 +1,11 @@
 import { render, fireEvent, screen } from "@testing-library/react";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import ShowProducts from "./ShowProducts";
-import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import Products from "./Products";
+import configureStore from "redux-mock-store";
 
 const mockStore = configureStore([]);
-describe("render show products component", () => {
+describe("render app component", () => {
   let store;
   const products = [
     {
@@ -57,14 +56,14 @@ describe("render show products component", () => {
       },
     });
   });
-  it("renders show product comp", () => {
-    const showproducts = render(
+  it("render App component", () => {
+    const AppComp = render(
       <BrowserRouter>
         <Provider store={store}>
-          <ShowProducts products={products} />
+          <App />
         </Provider>
       </BrowserRouter>
     );
-    expect(showproducts).toBeTruthy();
+    expect(AppComp).toBeTruthy();
   });
 });
