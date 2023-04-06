@@ -6,7 +6,7 @@ const initialState = {
   orders: [],
   error: null,
   loading: false,
-  cart: [],
+  cart: [{}],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
   wishlist: [],

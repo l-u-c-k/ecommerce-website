@@ -20,13 +20,9 @@ const validationSchema = Yup.object().shape({
     .min(8, "Password must be at least 8 characters"),
 });
 
-const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
-  // const dispatch = useDispatch();
-
+const Loginpage = ({ setLogin }) => {
   useEffect(() => {
-    // console.log("in useEffect")
     const localEmail = localStorage.getItem("emailData");
-    // console.log("localEmail:",localEmail)
     const lacalPass = localStorage.getItem("passwordData");
 
     if (localEmail) {
@@ -43,30 +39,8 @@ const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
   //  localStorage.getItem("emailData");
   const [getPassword, setPassword] = useState("");
 
-  // const { users } = useSelector((state) => state.data);
-  // console.log("users:",users)
-  // const [notification, setNotification] = useState("");
-  // const [success, setSuccess] = useState(false);
-  // const login = useSelector((state) => state.login.response);
-  // useEffect(() => {
-  //   if (login !== undefined) {
-  //     setNotification(login.message);
-  //     setSuccess(login.success);
-  //     if (login.success) {
-  //       setCookie("token", login.token, 1);
-  //     }
-  //   }
-  // }, [login]);
-  // useEffect(() => {
-  //   setNotification("");
-  //   setSuccess(false);
-  // }, []);
-  // useEffect(() => {
-  //   dispatch(loadUsersStart());
-  // }, []);
   return (
     <>
-      {/* {!success ? <div>{notification}</div> : <Navigate to="/dashboard" />} */}
       {getEmail != "" && getPassword != "" ? (
         (setLogin(true), navigate("/products"))
       ) : (
@@ -74,27 +48,6 @@ const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
           validationSchema={validationSchema}
           initialValues={initialValues}
           onSubmit={(values) => {
-            // Alert the input values of the form that we filled
-            // alert(JSON.stringify(values));
-            // dispatch(loginUserAction(values));
-            // console.log("values:", values);
-            //
-            // if (
-            //   localStorage.getItem("userName") === null &&
-            //   localStorage.getItem("password") === null
-            // ) {
-            // localStorage.setItem("user", values.email); // writes name and password to local storage if not exists
-            // localStorage.setItem("pass", values.password);
-            // }
-            // if (localStorage.getItem("user") === values.email) {
-            //   if (localStorage.getItem("pass") === values.password) {
-            //     navigate("/products");
-            //     console.log("in local storage", localStorage.getItem("user"));
-            //   }
-            // } else {
-            //   navigate("/login");
-            // }
-            // console.log("emailvalue:",values.email)
             if (
               values.email == "pasumarthylakshmi2000@gmail.com" &&
               values.password == "Lakshmi@9999"
@@ -118,16 +71,10 @@ const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
               handleBlur,
               handleSubmit,
             }) => (
-              // getEmail && getPassword ? (
-              //   navigate('/products')
-              // ) : (
               <div className="login">
                 <div className="form">
-                  {/* Passing handleSubmit parameter tohtml form onSubmit property */}
-
                   <Form noValidate onSubmit={handleSubmit}>
                     <span>Login</span>
-                    {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                     <Field
                       type="email"
                       name="email"
@@ -139,11 +86,9 @@ const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
                       data-testid="email"
                       ref={email}
                     />
-                    {/* If validation is not passed show errors */}
-                    <p className="error">
+                    <p className="error" data-testid="emailerror">
                       {errors.email && touched.email && errors.email}
                     </p>
-                    {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                     <Field
                       type="password"
                       name="password"
@@ -155,16 +100,13 @@ const Loginpage = ({ setLogin, handleLogin, setEmailFun, setPasswordFun }) => {
                       data-testid="password"
                       ref={password}
                     />
-                    {/* If validation is not passed show errors */}
-                    <p className="error">
+                    <p className="error" data-testid="passworderror">
                       {errors.password && touched.password && errors.password}
                     </p>
-                    {/* Click on submit button to submit the form */}
                     <button
                       type="submit"
                       name="submit"
                       data-testid="login-button"
-                      onClick={handleLogin}
                     >
                       Login
                     </button>
